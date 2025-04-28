@@ -6,8 +6,8 @@ import { CrearModelos } from '../utils/CrearModelos';
 export class LibroController {
 
     static async crearLibro(req:Request, res:Response, next:NextFunction) {
-        let libro = CrearModelos.crearLibro(req);
         try {
+            const libro = CrearModelos.crearLibro(req);
             const nuevo = await LibroService.crearLibro(libro);
             res.status(201).json({
                 success: true,
@@ -20,8 +20,8 @@ export class LibroController {
     }
 
     static async actualizarLibro(req:Request, res:Response, next:NextFunction) {
-        let libro = CrearModelos.crearLibro(req);
         try {
+            const libro = CrearModelos.crearLibro(req);
             const libroActualizado = await LibroService.actualizarLibro(libro);
             res.status(201).json({
                 success: true,
@@ -33,8 +33,8 @@ export class LibroController {
     }
 
     static async eliminarLibro(req:Request, res:Response, next:NextFunction) {
-        let id = req.body.id;
         try {
+            const id = req.body.id;
             const libroEliminado = await LibroService.eliminarLibro(id);
             res.status(201).json({
                 success: true,
