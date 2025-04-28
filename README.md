@@ -44,7 +44,7 @@ Este proyecto fue una gran oportunidad para reforzar buenas prácticas de desarr
 ### ➡️ Crear Libro
 
 - **Método**: `POST`
-- **URL**: `https://localhost:3000/api/libro/crear`
+- **URL**: `http://localhost:3000/api/libro/crear`
 - **JSON esperado**:
 
 ```json
@@ -61,7 +61,7 @@ Este proyecto fue una gran oportunidad para reforzar buenas prácticas de desarr
 ### ✏️ Actualizar Libro
 
 - **Método**: `POST`
-- **URL**: `https://localhost:3000/api/libro/actualizar`
+- **URL**: `http://localhost:3000/api/libro/actualizar`
 - **JSON esperado**:
 
 ```json
@@ -78,7 +78,7 @@ Este proyecto fue una gran oportunidad para reforzar buenas prácticas de desarr
 ### 🗑️ Eliminar Libro
 
 - **Método**: `DELETE`
-- **URL**: `https://localhost:3000/api/libro/eliminar`
+- **URL**: `http://localhost:3000/api/libro/eliminar`
 - **JSON esperado**:
 
 ```json
@@ -88,6 +88,22 @@ Este proyecto fue una gran oportunidad para reforzar buenas prácticas de desarr
 ```
 
 ---
+
+### ➡️ Crear Prestamo
+
+- **Método**: `POST`
+- **URL**: `http://localhost:3000/api/prestamo/crear`
+- **JSON esperado**:
+
+```json
+{
+    "cedulaEstudiante": string, // 
+    "idLibro": number, // 
+    "fechaInicio": date, // 
+    "fechaHasta": date, // 
+    "id": string // 
+}
+```
 
 ## 🚀 Notas Finales
 
