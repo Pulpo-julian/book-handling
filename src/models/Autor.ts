@@ -27,12 +27,22 @@ Autor.init(
     },
     {
         sequelize,
-        modelName: 'autor',
         tableName: 'tbl_autor',
         timestamps: false
     }
 );
 
+// relacion uno a muchos
+Autor.hasMany(Libro, {
+    //nombre de fk del autor en el libro
+    foreignKey: 'autor',
+    //campo de la clave primaria del autor
+    sourceKey: 'id'
+})
 
+Libro.belongsTo(Autor, {
+    foreignKey: 'autor',
+    targetKey: 'id'
+})
 
 export default Autor;

@@ -11,15 +11,14 @@ class Prestamo extends Model {
 
 Prestamo.init(
     {
-        cedulaEstudiante: { type: DataTypes.STRING},
-        idLibro: { type: DataTypes.INTEGER },
-        fechaInicio: { type: DataTypes.DATEONLY },
-        fechaHasta: { type: DataTypes.DATEONLY },
-        estado: { type: DataTypes.ENUM, values: ['activo', 'inactivo'] }
+        cedulaEstudiante: { type: DataTypes.STRING, primaryKey: true, allowNull: false, autoIncrement: false},
+        idLibro: { type: DataTypes.INTEGER, primaryKey: true, allowNull: false, autoIncrement: false },
+        fechaInicio: { type: DataTypes.DATEONLY, allowNull: false },
+        fechaHasta: { type: DataTypes.DATEONLY, allowNull: false },
+        estado: { type: DataTypes.ENUM, values: ['activo', 'inactivo'], allowNull: false }
     },
     {
         sequelize,
-        modelName: 'prestamo',
         tableName: 'tbl_prestamo',
         timestamps: false
     }
