@@ -25,6 +25,16 @@ Este proyecto fue una gran oportunidad para reforzar buenas prácticas de desarr
 
 ## 🧩 Requisitos para probar los endpoints
 
+- Descargar el proyecto y entrar en la carpeta **libreria-universidad**
+- Debes tener Xampp instalado, copias el .sql **/libreria-universidad/sql/db.sql**
+- Inicias Apache y MySQL y entras por CMD ejecutas **"C:\xampp\mysql\bin\mysql -u root -p"** solo dar **ENTER** cuando pida la contraseña.
+
+- Creas la base de datos usando **CREATE DATABASE libreria;** y usas la base de datos **USE DATABASE libreria;**
+
+- Pegas el .sql que copiaste y tienes la base de datos con las tablas y registros.
+
+- Dentro de la carpeta del proyecto ejecutar **npm install**, cuando termine ejecutar **npm run dev**
+
 - Instalar la extensión **Thunder Client** en VSCode para realizar pruebas de API fácilmente.
 
 ---
