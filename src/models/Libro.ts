@@ -18,7 +18,6 @@ Libro.init(
     },
     {
         sequelize,
-        modelName: 'libro',
         tableName: 'tbl_libro',
         timestamps: false
     }

@@ -9,9 +9,9 @@ class Estudiante extends Model {
 
 Estudiante.init(
     {
-        cedula: { type: DataTypes.STRING },
-        nombre: { type: DataTypes.STRING },
-        carrera: { type: DataTypes.STRING}
+        cedula: { type: DataTypes.STRING, allowNull: false, primaryKey: true },
+        nombre: { type: DataTypes.STRING, allowNull: false },
+        carrera: { type: DataTypes.STRING, allowNull: false}
     },
     {
         sequelize
