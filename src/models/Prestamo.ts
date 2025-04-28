@@ -1,13 +1,7 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../config/database";
 
-class Prestamo extends Model {
-    public cedulaEstudiante!:string;
-    public idLibro!:number;
-    public fechaInicio!:Date;
-    public fechaHasta!:Date;
-    public estado!:string;
-}
+class Prestamo extends Model {}
 
 Prestamo.init(
     {

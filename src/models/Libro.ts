@@ -2,12 +2,7 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/database';
 import Autor from './Autor';
 
-class Libro extends Model {
-    public id!:number;
-    public nombre!:string;
-    public autor!:number;
-    public copiasDisponibles!:number;
-}
+class Libro extends Model {}
 
 Libro.init(
     {

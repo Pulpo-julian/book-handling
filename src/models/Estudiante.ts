@@ -1,11 +1,7 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/database';
 
-class Estudiante extends Model {
-    public cedula!:string;
-    public nombre!:string;
-    public carrera!:string;
-}
+class Estudiante extends Model {}
 
 Estudiante.init(
     {
