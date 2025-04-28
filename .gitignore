@@ -1,0 +1,6 @@
+# Ignorar la carpeta de dependencias
+node_modules/
+
+# Otros ejemplos útiles que puedes agregar:
+.env
+dist/
