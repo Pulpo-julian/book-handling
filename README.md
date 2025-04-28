@@ -97,11 +97,11 @@ Este proyecto fue una gran oportunidad para reforzar buenas prácticas de desarr
 
 ```json
 {
-    "cedulaEstudiante": string, // 
-    "idLibro": number, // 
-    "fechaInicio": date, // 
-    "fechaHasta": date, // 
-    "id": string // 
+    "cedulaEstudiante": string, // sin validar
+    "idLibro": number, // sin validar
+    "fechaInicio": date, // sin validar
+    "fechaHasta": date, // sin validar
+    "id": string // sin validar
 }
 ```
 
