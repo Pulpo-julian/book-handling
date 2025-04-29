@@ -1,6 +1,6 @@
 import  { LibroRepository } from '../repository/LibroRepository';
 import { AutorRepository } from '../repository/AutorRepository';
-import { HttpStatusCode, HttpStatusWords } from '../enums/HttpStatus';
+import { HttpStatusCode, HttpBookMessages } from '../enums/HttpStatus';
 import ErrorDatoNoExiste from '../errors/ErrorDatoNoExiste';
 import { Book } from '../types/Book';
 
@@ -40,7 +40,7 @@ export class LibroService {
         const autor = await AutorRepository.autorPorId(autorId);
         if(!autor) {
             let statusCode = HttpStatusCode.DATO_NO_ENCONTRADO;
-            let mensajeError = HttpStatusWords.DATO_NO_ENCONTRADO_AUTOR_LIBRO; 
+            let mensajeError = HttpBookMessages.DATO_NO_ENCONTRADO_AUTOR_LIBRO; 
             throw new ErrorDatoNoExiste(statusCode, mensajeError);
         }
     }
@@ -49,7 +49,7 @@ export class LibroService {
         const libro = await this.obtenerLibroId(id);
         if(!libro) {
             let statusCode = HttpStatusCode.DATO_NO_ENCONTRADO;
-            let mensajeError = HttpStatusWords.DATO_INVALIDO_LIBRO_NO_EXITE;
+            let mensajeError = HttpBookMessages.DATO_INVALIDO_LIBRO_NO_EXITE;
             throw new ErrorDatoNoExiste(statusCode, mensajeError);
         }
     }
@@ -58,7 +58,7 @@ export class LibroService {
         const libro = await this.obtenerLibroNombre(nombre);
         if(libro) {
             let statusCode = HttpStatusCode.DATO_DUPLICADO;
-            let mensajeError = HttpStatusWords.DATO_INVALIDO_LIBRO_DUPLICADO;
+            let mensajeError = HttpBookMessages.DATO_INVALIDO_LIBRO_DUPLICADO;
             throw new ErrorDatoNoExiste(statusCode, mensajeError);
         }
 

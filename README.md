@@ -97,11 +97,11 @@ Este proyecto fue una gran oportunidad para reforzar buenas prácticas de desarr
 
 ```json
 {
-    "cedulaEstudiante": string, // sin validar
-    "idLibro": number, // sin validar
-    "fechaInicio": date, // sin validar
-    "fechaHasta": date, // sin validar
-    "id": string // sin validar
+    "cedulaEstudiante": string, //obligatoria, no puede ser numero, cedula debe exisir en bd
+    "idLibro": number, //obligatorio, no puede ser texto, el libro debe existir en bd
+    "fechaInicio": date, //debe ser igual o mayor a la fecha actual, no puede ser texto, no puede ser numero
+    "fechaHasta": date, //debe ser mayor a la fecha actual, no puede ser texto, no puede ser numero
+    "estado": string // debe ser solo texto "activo" o "inactivo" 
 }
 ```
 
