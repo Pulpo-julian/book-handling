@@ -1,4 +1,6 @@
 import { Model, DataTypes } from "sequelize";
+import Estudiante from "./Estudiante";
+import Libro from "./Libro";
 import sequelize from "../config/database";
 
 class Prestamo extends Model {}
@@ -22,4 +24,6 @@ Prestamo.init(
     }
 );
 
+Libro.belongsToMany(Estudiante, { through: Prestamo })
+Estudiante.belongsToMany(Libro, { through: Prestamo })
 export default Prestamo;

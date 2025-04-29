@@ -30,14 +30,17 @@ Autor.init(
 
 // relacion uno a muchos
 Autor.hasMany(Libro, {
-    //nombre de fk del autor en el libro
+    //la relacion se hace con el autor de tbl_libro
     foreignKey: 'autor',
-    //campo de la clave primaria del autor
+    //con la pk id de la tbl_autor
     sourceKey: 'id'
 })
 
+// uno a uno
 Libro.belongsTo(Autor, {
+    //relacion con el autor de tbl_libro
     foreignKey: 'autor',
+    //con pk de tbl_autor
     targetKey: 'id'
 })
 
