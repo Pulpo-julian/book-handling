@@ -6,6 +6,8 @@ import { Book } from '../types/Book';
 
 export class LibroService {
     
+    /** METODOS CRUD */
+
     static async obtenerLibros() {
         return await LibroRepository.libros();
     }
@@ -19,6 +21,7 @@ export class LibroService {
     }
 
     static async crearLibro(libro:Book) {
+        // validadores en cada metodo crud 
         await this.validarAutorExistente(libro.autor)
         await this.validarLibroExistePorNombre(libro.nombre);
         return await LibroRepository.crearLibro(libro);
@@ -36,6 +39,9 @@ export class LibroService {
         return await LibroRepository.eliminarLibro(id);
     }
 
+
+    /** METODOS VALIDADORES DE CRUD */
+    
     private static async validarAutorExistente(autorId:number) {
         const autor = await AutorRepository.autorPorId(autorId);
         if(!autor) {

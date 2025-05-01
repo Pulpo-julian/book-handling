@@ -11,30 +11,20 @@ export default class ValidadorErrores {
         }
     }
 
-    private static validarNumerico(dato:any, statusCode:number, errorMessage:string, inverso:boolean = false) {
-
-        let esNumero = typeof dato !== 'number';
-
-        if(inverso) {
-            esNumero = !esNumero
-        }
-
-        if(esNumero) {
-            //se lanzara cuando se necesite que sea numero
-            throw new ErrorDatoIncorrecto(statusCode, errorMessage);
-        } else {
-            //se lanzara cuando se necesite que no sea numero
-            throw new ErrorDatoIncorrecto(statusCode, errorMessage);
-        }
-
-    }
-
+    // si es NaN lanza error
     public static validarDatoNoNumerico(dato:any, statusCode:number, errorMessage:string) {
-        this.validarNumerico(dato, statusCode, errorMessage, true);
+        let esNan = Number.isNaN(Number(dato));
+        if(esNan) {
+            throw new ErrorDatoIncorrecto(statusCode, errorMessage);
+        }
     }
     
+    // si no es un numero laza error
     public static validarDatoNumerico(dato:any, statusCode:number, errorMessage:string) {
-        this.validarNumerico(dato, statusCode, errorMessage);
+        let esNumero = typeof dato;
+        if(!(esNumero == 'number')) {
+            throw new ErrorDatoIncorrecto(statusCode, errorMessage);
+        }
     }
 
     
