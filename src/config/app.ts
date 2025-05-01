@@ -2,9 +2,9 @@ import express from 'express';
 import LibroRoutes from '../routes/libro.routes';
 import PrestamoRoutes from '../routes/prestamo.routes'
 import { manejoError } from '../middleware/error/ManejoError';
-import { validacionCrearLibro } from '../middleware/ValidacionesLibro';
-import { validacionIdLibro } from '../middleware/ValidacionesLibro';
-import { validacionesCrearPrestamo } from '../middleware/ValidacionesPrestamo';
+import { validacionCrearLibro } from '../middleware/validadores/web/ValidacionesLibro';
+import { validacionIdLibro } from '../middleware/validadores/web/ValidacionesLibro';
+import { validacionesCrearPrestamo } from '../middleware/validadores/web/ValidacionesPrestamo';
 
 const app = express();
 
