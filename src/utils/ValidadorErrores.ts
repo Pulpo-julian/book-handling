@@ -11,11 +11,33 @@ export default class ValidadorErrores {
         }
     }
 
-    public static validarDatoNumerico(dato:any, statusCode:number, errorMessage:string) {
-        if(typeof dato !== 'number') {
+    private static validarNumerico(dato:any, statusCode:number, errorMessage:string, inverso:boolean = false) {
+
+        let esNumero = typeof dato !== 'number';
+
+        if(inverso) {
+            esNumero = !esNumero
+        }
+
+        if(esNumero) {
+            //se lanzara cuando se necesite que sea numero
+            throw new ErrorDatoIncorrecto(statusCode, errorMessage);
+        } else {
+            //se lanzara cuando se necesite que no sea numero
             throw new ErrorDatoIncorrecto(statusCode, errorMessage);
         }
+
     }
+
+    public static validarDatoNoNumerico(dato:any, statusCode:number, errorMessage:string) {
+        this.validarNumerico(dato, statusCode, errorMessage, true);
+    }
+    
+    public static validarDatoNumerico(dato:any, statusCode:number, errorMessage:string) {
+        this.validarNumerico(dato, statusCode, errorMessage);
+    }
+
+    
 
     public static validarDatoDuplicado(dato:Object, datoComparado:Object, statusCode:number, errorMessage:string) {
         const valorDato = Object.values(dato)[0];
@@ -28,6 +50,12 @@ export default class ValidadorErrores {
     public static validarDatoPositivo(dato:number, statusCode:number, errorMessage:string) {
         if(dato <= 0) {
             throw new ErrorDatoNoPositivo(statusCode, errorMessage);
+        }
+    }
+
+    public static validarDatoString(dato:any, statusCode:number, errorMessage:string) {
+        if(!(typeof dato === "string")) {
+            throw new ErrorDatoIncorrecto(statusCode, errorMessage);
         }
     }
     

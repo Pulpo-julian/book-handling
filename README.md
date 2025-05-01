@@ -97,7 +97,7 @@ Este proyecto fue una gran oportunidad para reforzar buenas prácticas de desarr
 
 ```json
 {
-    "cedulaEstudiante": string, //obligatoria, no puede ser numero, cedula debe exisir en bd
+    "cedulaEstudiante": string, //obligatoria, no puede ser numero, cedula debe exisir en bd , que manden un strign pero que no sean numeros
     "idLibro": number, //obligatorio, no puede ser texto, el libro debe existir en bd
     "fechaInicio": date, //debe ser igual o mayor a la fecha actual, no puede ser texto, no puede ser numero
     "fechaHasta": date, //debe ser mayor a la fecha actual, no puede ser texto, no puede ser numero

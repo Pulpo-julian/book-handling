@@ -4,6 +4,7 @@ import PrestamoRoutes from '../routes/prestamo.routes'
 import { manejoError } from '../middleware/error/ManejoError';
 import { validacionCrearLibro } from '../middleware/ValidacionesLibro';
 import { validacionIdLibro } from '../middleware/ValidacionesLibro';
+import { validacionesCrearPrestamo } from '../middleware/ValidacionesPrestamo';
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use('/api/libro/actualizar', validacionCrearLibro, validacionIdLibro);
 app.use('/api/libro/eliminar', validacionIdLibro);
 
 //middles que validan solicitudes a los prestamos
-
+app.use('/api/prestamo/crear', validacionesCrearPrestamo);
 
 
 // rutas
