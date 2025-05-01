@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import ValidadorErrores from "../../utils/ValidadorErrores";
-import { HttpStatusCode, HttpBookMessages } from "../../enums/HttpStatus"; 
+import ValidadorErrores from "../../../utils/ValidadorErrores";
+import { HttpStatusCode, HttpBookMessages } from "../../../enums/HttpStatus"; 
 
 export function validacionCrearLibro(req:Request, res:Response, next:NextFunction) {
 

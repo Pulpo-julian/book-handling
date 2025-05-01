@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import ValidadorErrores from "../../utils/ValidadorErrores";
-import { HttpStatusCode, HttpBorrowMessages } from "../../enums/HttpStatus";
+import ValidadorErrores from "../../../utils/ValidadorErrores";
+import { HttpStatusCode, HttpBorrowMessages } from "../../../enums/HttpStatus";
 
 export function validacionesCrearPrestamo(req:Request, res:Response, next:NextFunction) {
 
