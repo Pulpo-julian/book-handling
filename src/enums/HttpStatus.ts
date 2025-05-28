@@ -24,9 +24,8 @@ export enum HttpBorrowMessages {
     DATO_REQUERIDO_CEDULA = "la cedula es obligatoria",
     DATO_NO_ENCONTRADO_CEDULA =  "la cedula no existe en la base de datos",
     DATO_INCORRECTO_CEDULA = "la cedula debe ser un string",
-    DATO_INCORRECTO_CEDULA_NUMERO = "la cedula solo debe contener numeros" 
+    DATO_INCORRECTO_CEDULA_NUMERO = "la cedula solo debe contener numeros",      
     /*    
-    DATO_REQUERIDO_NOMBRE_LIBRO = "el nombre del libro es obligatorio",      
     DATO_REQUERIDO_AUTOR_LIBRO = "el autor del libro es obligatorio",      
     DATO_REQUERIDO_COPIAS_LIBRO = "la cantidad de copias es obligatorio",      
     DATO_NO_ENCONTRADO_AUTOR_LIBRO = "el autor del libro no existe en la base de datos",   

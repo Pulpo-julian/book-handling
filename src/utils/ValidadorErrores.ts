@@ -11,7 +11,7 @@ export default class ValidadorErrores {
         }
     }
 
-    // si es NaN lanza error
+    // if it's NaN throws an Error
     public static validarDatoNoNumerico(dato:any, statusCode:number, errorMessage:string) {
         let esNan = Number.isNaN(Number(dato));
         if(esNan) {
@@ -19,15 +19,13 @@ export default class ValidadorErrores {
         }
     }
     
-    // si no es un numero laza error
+    // if not a number throws an Error
     public static validarDatoNumerico(dato:any, statusCode:number, errorMessage:string) {
         let esNumero = typeof dato;
         if(!(esNumero == 'number')) {
             throw new ErrorDatoIncorrecto(statusCode, errorMessage);
         }
     }
-
-    
 
     public static validarDatoDuplicado(dato:Object, datoComparado:Object, statusCode:number, errorMessage:string) {
         const valorDato = Object.values(dato)[0];
