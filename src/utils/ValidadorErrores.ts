@@ -46,5 +46,11 @@ export default class ValidadorErrores {
             throw new ErrorDatoIncorrecto(statusCode, errorMessage);
         }
     }
+
+    public static verifyGratherDate(dateToBeGrather:Date, dateToBeLower:Date, statusCode:number , errorMessage:string) {
+        if(dateToBeLower > dateToBeGrather) {
+            throw new ErrorDatoIncorrecto(statusCode, errorMessage);
+        }
+    }
     
 }

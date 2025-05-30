@@ -15,7 +15,7 @@ app.use('/api/libro/crear', validacionCrearLibro);
 app.use('/api/libro/actualizar', validacionCrearLibro, validacionIdLibro);
 app.use('/api/libro/eliminar', validacionIdLibro);
 
-//middles que validan solicitudes a los prestamos
+//middleware for validate borrow information
 app.use('/api/prestamo/crear', validacionesCrearPrestamo);
 
 

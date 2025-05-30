@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import ValidadorErrores from "../../../utils/ValidadorErrores";
 import { HttpStatusCode, HttpBorrowMessages, HttpBookMessages } from "../../../enums/HttpStatus";
+import { FormatearFechas } from "../../../utils/FormatearFechas";
 
 export function validacionesCrearPrestamo(req:Request, res:Response, next:NextFunction) {
 
@@ -29,8 +30,13 @@ export function validacionesCrearPrestamo(req:Request, res:Response, next:NextFu
         let isNumberBookIdMessage = HttpBookMessages.DATO_INVALIDO_ID_LIBRO;
         ValidadorErrores.validarDatoNumerico(idLibro, isNumberBookIdCode, isNumberBookIdMessage);
 
-                
-
+        //validaciones de fecha
+        //igual o mayor a la fecha de hoy
+        let clientDate = req.body.fechaInicio;
+        let todayDate = FormatearFechas.formatear(new Date());
+        let incorrectDateMessage = HttpBorrowMessages.DATO_INVALIDO_FECHA_MAYOR;
+        let incorrectDateCode = HttpStatusCode.DATO_INVALIDO;
+        ValidadorErrores.verifyGratherDate(clientDate, todayDate, incorrectDateCode, incorrectDateMessage)
         
 
         next();
